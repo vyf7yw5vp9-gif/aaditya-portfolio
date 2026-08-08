@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aaditya Dwivedi | Web Developer</title>
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+}
+body{
+  font-family:Arial,sans-serif;
+  background:#070b16;
+  color:white;
+  line-height:1.6;
+}
+/* NAVBAR */
+header{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  padding:18px 8%;
+  background:rgba(7,11,22,.9);
+  backdrop-filter:blur(10px);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  z-index:1000;
+  border-bottom:1px solid #202a43;
+}
+.logo{
+  font-size:25px;
+  font-weight:bold;
+  color:#6ea8fe;
+}
+nav a{
+  color:white;
+  text-decoration:none;
+  margin-left:22px;
+  font-size:14px;
+  transition:.3s;
+}
+nav a:hover{
+  color:#6ea8fe;
+}
+/* HERO */
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:100px 8%;
+  background:
+    radial-gradient(circle at top,#17264b 0%,#070b16 50%);
+}
+.hero-content{
+  animation:fadeUp 1.2s ease;
+}
+.avatar{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:45px;
+  font-weight:bold;
+  background:#162542;
+  border:3px solid #6ea8fe;
+  box-shadow:0 0 30px rgba(110,168,254,.25);
+}
+.hero h1{
+  font-size:clamp(42px,8vw,75px);
+  margin-top:20px;
+}
+.hero h1 span{
+  color:#6ea8fe;
+}
+.hero p{
+  color:#aeb9d1;
+  font-size:19px;
+  margin:12px 0 28px;
+}
+.btn{
+  display:inline-block;
+  padding:13px 25px;
+  margin:5px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:bold;
+  background:#6ea8fe;
+  color:#07101f;
+  transition:.3s;
+}
+.btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 8px 25px rgba(110,168,254,.25);
+}
+/* SECTIONS */
+section{
+  padding:100px 8%;
+  min-height:60vh;
+}
+.section-title{
+  text-align:center;
+  font-size:36px;
+  margin-bottom:45px;
+}
+.section-title span{
+  color:#6ea8fe;
+}
+/* ABOUT */
+.about{
+  max-width:850px;
+  margin:auto;
+  text-align:center;
+  color:#c1c9dc;
+  font-size:18px;
+}
+/* CARDS */
+.cards{
+  max-width:1100px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:22px;
+}
+.card{
+  padding:28px;
+  background:#10182b;
+  border:1px solid #253252;
+  border-radius:15px;
+  transition:.35s;
+  animation:fadeUp .8s ease;
+}
+.card:hover{
+  transform:translateY(-8px);
+  border-color:#6ea8fe;
+  box-shadow:0 15px 35px rgba(0,0,0,.25);
+}
+.card h3{
+  color:#6ea8fe;
+  margin-bottom:10px;
+  font-size:22px;
+}
+.card p{
+  color:#b8c2d8;
+}
+/* SKILLS */
+.skill{
+  margin-top:18px;
+}
+.skill-name{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:6px;
+  color:#cbd3e5;
+}
+.bar{
+  height:8px;
+  background:#202a42;
+  border-radius:10px;
+  overflow:hidden;
+}
+.progress{
+  height:100%;
+  background:#6ea8fe;
+  border-radius:10px;
+  animation:load 1.5s ease;
+}
+.html{width:80%}
+.css{width:70%}
+.web{width:65%}
+.ai{width:50%}
+/* PROJECTS */
+.project{
+  text-align:center;
+}
+.project a{
+  display:inline-block;
+  margin-top:18px;
+  color:#6ea8fe;
+  text-decoration:none;
+  font-weight:bold;
+}
+.project a:hover{
+  text-decoration:underline;
+}
+/* GOAL */
+.goal{
+  max-width:800px;
+  margin:auto;
+  text-align:center;
+  color:#c1c9dc;
+  font-size:19px;
+}
+/* CONTACT */
+.contact{
+  text-align:center;
+}
+.contact p{
+  color:#c1c9dc;
+  margin:10px;
+}
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:25px;
+  background:#04060c;
+  color:#7f8aa4;
+}
+/* BACK TO TOP */
+.top{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  width:45px;
+  height:45px;
+  border-radius:50%;
+  background:#6ea8fe;
+  color:#07101f;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  font-weight:bold;
+  z-index:999;
+}
+/* ANIMATIONS */
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(30px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+@keyframes load{
+  from{width:0}
+}
+/* MOBILE */
+@media(max-width:700px){
+  header{
+    padding:15px 5%;
+  }
+  .logo{
+    font-size:20px;
+  }
+  nav{
+    display:none;
+  }
+  section{
+    padding:90px 5%;
+  }
+  .hero h1{
+    font-size:45px;
+  }
+  .hero p{
+    font-size:16px;
+  }
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">Aaditya.</div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#goal">Goal</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+<!-- HOME -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="avatar">AD</div>
+    <h1>Hi, I'm <span>Aaditya</span></h1>
+    <p>
+      Class 11 Student • Web Developer • Future Tech Professional
+    </p>
+    <a href="#projects" class="btn">View My Projects</a>
+    <a href="#contact" class="btn">Contact Me</a>
+  </div>
+</section>
+<!-- ABOUT -->
+<section id="about">
+  <h2 class="section-title">
+    About <span>Me</span>
+  </h2>
+  <div class="about">
+    <p>
+      Hello! I'm Aaditya Dwivedi, a Class 11 student interested in
+      technology, coding, artificial intelligence and web development.
+    </p>
+    <br>
+    <p>
+      I'm learning how websites and software are built and published.
+      I enjoy learning new technologies and turning ideas into real projects.
+    </p>
+  </div>
+</section>
+<!-- SKILLS -->
+<section id="skills">
+  <h2 class="section-title">
+    My <span>Skills</span>
+  </h2>
+  <div class="cards">
+    <div class="card">
+      <h3>HTML</h3>
+      <p>Website structure and content.</p>
+      <div class="skill">
+        <div class="skill-name">
+          <span>Level</span>
+          <span>80%</span>
+        </div>
+        <div class="bar">
+          <div class="progress html"></div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <h3>CSS</h3>
+      <p>Modern website design and layouts.</p>
+      <div class="skill">
+        <div class="skill-name">
+          <span>Level</span>
+          <span>70%</span>
+        </div>
+        <div class="bar">
+          <div class="progress css"></div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <h3>Web Development</h3>
+      <p>Building and publishing websites.</p>
+      <div class="skill">
+        <div class="skill-name">
+          <span>Level</span>
+          <span>65%</span>
+        </div>
+        <div class="bar">
+          <div class="progress web"></div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <h3>AI & Technology</h3>
+      <p>Exploring AI and modern technology.</p>
+      <div class="skill">
+        <div class="skill-name">
+          <span>Learning</span>
+          <span>50%</span>
+        </div>
+        <div class="bar">
+          <div class="progress ai"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- PROJECTS -->
+<section id="projects">
+  <h2 class="section-title">
+    My <span>Projects</span>
+  </h2>
+  <div class="cards">
+    <div class="card project">
+      <h3>Personal Portfolio</h3>
+      <p>
+        My personal portfolio website showcasing my skills,
+        learning journey and projects.
+      </p>
+      <a href="#home">View Project →</a>
+    </div>
+    <div class="card project">
+      <h3>Future AI Project</h3>
+      <p>
+        An AI-based project that I will build while learning
+        artificial intelligence and programming.
+      </p>
+      <a href="#contact">Coming Soon →</a>
+    </div>
+    <div class="card project">
+      <h3>Future Web Project</h3>
+      <p>
+        More websites and applications will be added here
+        as I continue learning.
+      </p>
+      <a href="#contact">Coming Soon →</a>
+    </div>
+  </div>
+</section>
+<!-- GOAL -->
+<section id="goal">
+  <h2 class="section-title">
+    My <span>Goal</span>
+  </h2>
+  <div class="goal">
+    <p>
+      My goal is to become highly skilled in software development,
+      artificial intelligence and modern technologies.
+      I want to keep learning, build useful projects and create
+      a strong career in the technology field.
+    </p>
+  </div>
+</section>
+<!-- CONTACT -->
+<section id="contact">
+  <h2 class="section-title">
+    Contact <span>Me</span>
+  </h2>
+  <div class="contact">
+    <p>📱 9214761441</p>
+    <p>💻 Web Development Student</p>
+    <a href="tel:9214761441" class="btn">
+      Call Me
+    </a>
+  </div>
+</section>
+<footer>
+  <p>
+    © 2026 Aaditya Dwivedi • Built with HTML & CSS
+  </p>
+</footer>
+<a href="#home" class="top">↑</a>
+</body>
+</html>
